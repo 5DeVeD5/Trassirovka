@@ -60,7 +60,7 @@ Vec3f cast_ray(const Vec3f &orig, const Vec3f &dir, const std::vector<Sphere> &s
     Material material;
 
     if (!scene_intersect(orig, dir, spheres, point, N, material)) {
-        return Vec3f(1, 0.4117647058823, 0.7058823529411); // background color
+        return Vec3f(1, 0.4117647058823, 0.7058823529411); 
     }
  
  
@@ -86,7 +86,7 @@ void render(const std::vector<Sphere> &spheres, const std::vector<Light> &lights
         }
     }
 
-    std::ofstream ofs; // save the framebuffer to file
+    std::ofstream ofs;
     ofs.open("./out.ppm",std::ios::binary);
     ofs << "P6\n" << width << " " << height << "\n255\n";
     for (size_t i = 0; i < height*width; ++i) {
